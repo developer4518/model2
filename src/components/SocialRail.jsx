@@ -1,5 +1,5 @@
-import React,{useRef,useState} from 'react';
-import {Instagram,Facebook,Youtube,Linkedin,MessageCircle,X,ArrowUpRight} from 'lucide-react';
+import React, {useRef,useState} from 'react';
+import {Instagram,Facebook,Youtube,Linkedin,MessageCircle,X} from 'lucide-react';
 import './social.css';
 
 // All social buttons are intentionally local demo previews.

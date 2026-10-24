@@ -9,3 +9,17 @@ Run `npm install`, then `npm run dev`. Production: `npm run build` and `npm run 
 Motion: short, skippable Flyinglyte intro on initial load; client-side page transitions with browser Back/Forward support; floating photo collage and pointer-driven 3D package cards. Click package/stay images to open the keyboard-accessible photo viewer, to see the full photo fitted to the screen without scrolling. The top-right close button or Escape closes the viewer. Reduced-motion preferences disable decorative animation and shorten the intro.
 
 Prices and travel suggestions are illustrative. Search does not query live inventory, enquiry forms do not transmit or save personal information, and no bookings or payments are processed. Images load from Unsplash and fonts from Google Fonts; internet access is needed for these assets. Connect real travel inventory and an enquiry backend before using this for bookings.
+
+## Source structure
+
+Following Model1's organization:
+
+- `src/main.jsx`: React entry point and global styles.
+- `src/App.jsx`: routing, transitions and shared application state.
+- `src/pages/`: Home, Flights, Hotels and About pages. Flights and Hotels reuse the shared travel layout in HomePage.
+- `src/components/`: navigation, footer, dialogs, artwork and package components, with their existing component styles.
+- `src/components/home/`: hero, booking, destinations, about, FAQ and other travel page sections.
+- `src/data/`: destination, stay and popular package data.
+- `src/hooks/`: theme hook.
+- `src/theme/`: theme persistence and application helpers.
+- `src/utils/`: image URLs and pointer motion helpers.

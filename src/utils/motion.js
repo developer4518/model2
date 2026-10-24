@@ -1,0 +1,2 @@
+export function tiltCard(e){if(e.pointerType!=='mouse'||matchMedia('(prefers-reduced-motion: reduce)').matches)return;const r=e.currentTarget.getBoundingClientRect();e.currentTarget.style.setProperty('--rx',`${(0.5-(e.clientY-r.top)/r.height)*16}deg`);e.currentTarget.style.setProperty('--ry',`${((e.clientX-r.left)/r.width-0.5)*20}deg`)}
+export function resetTilt(e){e.currentTarget.style.setProperty('--rx','0deg');e.currentTarget.style.setProperty('--ry','0deg')}

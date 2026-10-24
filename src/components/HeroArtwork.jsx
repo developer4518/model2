@@ -1,6 +1,6 @@
-import React,{useEffect,useRef,useState} from 'react';
+import React, {useEffect,useRef,useState} from 'react';
 import {MapPin} from 'lucide-react';
-const photo=(id,w=1200)=>`https://images.unsplash.com/${id}?auto=format&fit=crop&w=${w}&q=85`;
+import {photo} from '../utils/images';
 export default function HeroArtwork({isHome,isFlights,ready}){
  const art=useRef(null),[entered,setEntered]=useState(false);
  useEffect(()=>{

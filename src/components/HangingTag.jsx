@@ -1,4 +1,4 @@
-import React,{useEffect,useRef,useState} from 'react';
+import React, {useEffect,useRef,useState} from 'react';
 
 export default function HangingTag({ready}){
  const tag=useRef(null),[arrived,setArrived]=useState(false);

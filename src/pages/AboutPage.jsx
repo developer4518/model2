@@ -1,7 +1,7 @@
-import React,{useEffect,useRef} from 'react';
+import React, {useEffect,useRef} from 'react';
 import {ArrowUpRight,Compass,Heart,Check,Leaf,Headphones,MapPin,Plane,ShieldCheck} from 'lucide-react';
 import './about.css';
-const image=(id,w=1200)=>`https://images.unsplash.com/${id}?auto=format&fit=crop&w=${w}&q=85`;
+import {photo as image} from '../utils/images';
 export default function AboutPage({enquire,ready}){
  const root=useRef(null);
  useEffect(()=>{if(!ready)return;const nodes=root.current.querySelectorAll('[data-reveal]');if(!('IntersectionObserver' in window)||matchMedia('(prefers-reduced-motion: reduce)').matches){nodes.forEach(n=>n.classList.add('revealed'));return}const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('revealed');observer.unobserve(entry.target)}}),{threshold:.12});nodes.forEach(n=>observer.observe(n));return()=>observer.disconnect()},[ready]);
