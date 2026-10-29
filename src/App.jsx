@@ -1,16 +1,16 @@
 import React, {useEffect,useRef,useState} from 'react';
 import {ArrowUpRight,ArrowRight,Plane} from 'lucide-react';
 import './motion.css';
-import HomePage from './pages/HomePage';
-import FlightsPage from './pages/FlightsPage';
-import HotelsPage from './pages/HotelsPage';
-import AboutPage from './pages/AboutPage';
-import PackagesPage from './pages/PackagesPage';
-import Footer from './components/Footer';
-import Navbar from './components/Navbar';
-import EnquiryModal from './components/EnquiryModal';
-import PackageImageZoom from './components/PackageImageZoom';
-import SocialRail from './components/SocialRail';
+import Home from './Pages/Home';
+import FlightsPage from './Pages/FlightsPage';
+import HotelsPage from './Pages/HotelsPage';
+import AboutUs from './components/Home/AboutUs';
+import PackageSection from './modules/packages/PackageSection';
+import Footer from './components/Home/Footer/Footer';
+import Navbar from './components/Home/Navbar';
+import TripEnquiryPopup from './components/common/TripEnquiryPopup';
+import PackageImageZoom from './modules/packages/PackageImageZoom';
+import SocialRail from './components/common/SocialRail';
 import useTheme from './hooks/useTheme';
 import useSmoothScroll from './hooks/useSmoothScroll';
 export default function App(){
@@ -40,15 +40,15 @@ export default function App(){
  useEffect(()=>{if(search)document.getElementById('results')?.scrollIntoView({behavior:'smooth',block:'start'})},[search]);
  function find(e){e.preventDefault();const values=Object.fromEntries(new FormData(e.currentTarget));setSearch(values)}
  const isHome=page==='Home',isFlights=page==='Flights';
- const Page=page==='Packages'?PackagesPage:isHome?HomePage:isFlights?FlightsPage:HotelsPage;
+ const Page=page==='Packages'?PackageSection:isHome?Home:isFlights?FlightsPage:HotelsPage;
  return <>
  {intro&&<div className="brand-intro" role="status" aria-label="Welcome to Flyinglyte"><div className="intro-orbit"><Plane size={28}/></div><div className="intro-word" aria-hidden="true">{'Flyinglyte'.split('').map((letter,i)=><span key={i} style={{'--letter':i}}>{letter}</span>)}<span className="intro-dot">.</span></div><p>GO PLACES. FEEL MORE.</p><button onClick={()=>setIntro(false)}>Skip intro <ArrowRight size={14}/></button></div>}
  <div className={`site-shell ${intro?'awaiting-intro':''} ${transition?'page-leaving':''}`} inert={intro||transition} aria-busy={transition}>
  <SocialRail page={page} ready={!intro&&!transition}/>
  <div className="announcement">A little less ordinary. A lot more you. <a href="/#packages">Discover your next escape <ArrowUpRight size={12}/></a></div>
  <Navbar page={page} menu={menu} setMenu={setMenu} theme={theme} setTheme={setTheme} enquire={enquire}/>
- <main key={page} className="page-stage">{page==='About Us'?<AboutPage enquire={enquire} ready={!intro}/>:<Page isHome={isHome} isFlights={isFlights} page={page} intro={intro} find={find} search={search} enquire={enquire} filter={filter} setFilter={setFilter} saved={saved} setSaved={setSaved} setZoom={setZoom} faq={faq} setFaq={setFaq}/>}</main><Footer enquire={enquire}/>
- <EnquiryModal modal={modal} setModal={setModal} sent={sent} setSent={setSent} dialog={dialog}/>
+ <main key={page} className="page-stage">{page==='About Us'?<AboutUs enquire={enquire} ready={!intro}/>:<Page isHome={isHome} isFlights={isFlights} page={page} intro={intro} find={find} search={search} enquire={enquire} filter={filter} setFilter={setFilter} saved={saved} setSaved={setSaved} setZoom={setZoom} faq={faq} setFaq={setFaq}/>}</main><Footer enquire={enquire}/>
+ <TripEnquiryPopup modal={modal} setModal={setModal} sent={sent} setSent={setSent} dialog={dialog}/>
  </div>{zoom&&<PackageImageZoom place={zoom} onClose={()=>setZoom(null)}/>}
  </>;
 }

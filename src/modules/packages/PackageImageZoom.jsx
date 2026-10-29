@@ -1,6 +1,6 @@
 import React, {useEffect,useRef} from 'react';
 import {X} from 'lucide-react';
-import {photo} from '../utils/images';
+import {photo} from '../../utils/images';
 export default function PackageImageZoom({place,onClose}){
  const ref=useRef(null);
  useEffect(()=>{const previous=document.activeElement;ref.current.showModal();const overflow=document.body.style.overflow;document.body.style.overflow='hidden';return()=>{document.body.style.overflow=overflow;previous?.focus()}},[]);

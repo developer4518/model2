@@ -12,14 +12,17 @@ Prices and travel suggestions are illustrative. Search does not query live inven
 
 ## Source structure
 
-Following Model1's organization:
+Aligned with FlyingLyte's folder conventions; component behavior and donor prop contracts remain independent. Full mapping and integration notes: [docs/STRUCTURE-MAPPING.md](docs/STRUCTURE-MAPPING.md).
 
 - `src/main.jsx`: React entry point and global styles.
 - `src/App.jsx`: routing, transitions and shared application state.
-- `src/pages/`: Home, Flights, Hotels and About pages. Flights and Hotels reuse the shared travel layout in HomePage.
-- `src/components/`: navigation, footer, dialogs, artwork and package components, with their existing component styles.
-- `src/components/home/`: hero, booking, destinations, about, FAQ and other travel page sections.
-- `src/data/`: destination, stay and popular package data.
-- `src/hooks/`: theme hook.
+- `src/Pages/`: Home, Flights and Hotels pages. Flights and Hotels reuse the shared travel layout in Home.
+- `src/components/Home/`: navigation, footer, artwork, home sections and the full AboutUs page.
+- `src/components/common/`: enquiry popup, FAQ, depth motion and social rail.
+- `src/modules/Search/`: search form and demo search results preview.
+- `src/modules/packages/`: full packages page, homepage packages, their shared responsive card deck, image zoom and package styles.
+- `src/data/demo/`: illustrative destination, stay and package data.
+- `src/index.css` and `src/motion.css`: global theme, responsive styles and animations.
+- `src/hooks/`: theme and smooth scrolling hooks.
 - `src/theme/`: theme persistence and application helpers.
 - `src/utils/`: image URLs and pointer motion helpers.

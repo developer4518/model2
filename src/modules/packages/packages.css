@@ -1,0 +1,17 @@
+.popular-section{background:var(--soft);overflow:clip}
+
+.popular-section .package-deck .pkg-card-image{height:230px}
+.popular-section .package-deck .pkg-card-copy{padding:18px}
+.popular-section .package-deck .pkg-card h3{margin:10px 0 8px}
+.popular-section .package-deck .pkg-route{margin-bottom:12px}
+.popular-section .package-deck .pkg-card ul{margin-bottom:14px}
+.popular-section .package-deck .pkg-bottom{padding-top:14px}
+
+@media(max-width:1100px){
+ .popular-section .package-deck .pkg-card-image{height:190px}
+}
+
+@media(max-width:760px){
+ .popular-section .package-deck .pkg-card-image{height:160px}
+ .popular-section .package-deck .pkg-card-copy{padding:14px}
+}

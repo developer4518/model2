@@ -1,6 +1,6 @@
 import React from 'react';
-import HomePage from './HomePage';
+import Home from './Home';
 
 export default function FlightsPage(props){
- return <HomePage {...props}/>;
+ return <Home {...props}/>;
 }

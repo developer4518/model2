@@ -2,7 +2,7 @@
 import {ArrowUpRight,Plane,Sparkles,Check,MapPin,CalendarDays,Wallet,MessageCircle} from 'lucide-react';
 import './escape-planner.css';
 
-export default function EscapeSection({enquire}){
+export default function CTASection({enquire}){
  const id=useId(),section=useRef(null);
  const [visible,setVisible]=useState(false);
  useEffect(()=>{
